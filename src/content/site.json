@@ -30,6 +30,11 @@
       "videoSrc": "/media/uploads/cvd-glass.mp4",
       "category": "Brand",
       "title": "CVD Glass"
+    },
+    {
+      "category": "Collaboration",
+      "videoSrc": "/media/uploads/geneysis-x-hyatt-hotel.mp4",
+      "title": "Geneysis x Hyatt Hotel"
     }
   ],
   "exampleVideos": []
