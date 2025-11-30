@@ -44,7 +44,7 @@ export default function Contact({ data }) {
             </div>
 
             <div className="field-group">
-              <label htmlFor="message">
+              {/* <label htmlFor="message">
                 Tell us about your project<span>*</span>
               </label>
               <textarea
@@ -52,7 +52,7 @@ export default function Contact({ data }) {
                 name="message"
                 rows="4"
                 required
-              />
+              /> */}
             </div>
 
             <button type="submit">

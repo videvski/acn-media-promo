@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "../styles/Examples.css";
+import "../styles/VideoCard.css";
 import VideoCard from "./VideoCard";
 
 export default function Examples({ videos }) {
@@ -11,17 +12,22 @@ export default function Examples({ videos }) {
     <div className="examples-section">
       <div className="section-inner">
         <div className="video-grid">
-          {videos.map((v, idx) => (
-            <VideoCard
-              key={v.id || idx}
-              id={v.id || `example-${idx}`}
-              title={v.title}
-              videoSrc={v.videoSrc}
-              poster={v.poster}
-              isActive={activeId === (v.id || `example-${idx}`)}
-              onSetActive={setActiveId}
-            />
-          ))}
+          {videos.map((v, idx) => {
+            const id = v.id || `example-${idx}`;
+            return (
+              <VideoCard
+                key={id}
+                id={id}
+                title={v.title}
+                videoSrc={v.videoSrc}
+                poster={v.poster}
+                isActive={activeId === id}
+                onSetActive={setActiveId}
+                autoPlayMuted={false}
+                isVertical={false}
+              />
+            );
+          })}
         </div>
       </div>
     </div>

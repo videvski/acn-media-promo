@@ -15,7 +15,15 @@
   background: #111319;
 }
 
-.video-wrapper video {
+/* Vertical reels (9:16) */
+.video-wrapper-vertical video {
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  object-fit: cover;
+  display: block;
+}
+
+.video-wrapper:not(.video-wrapper-vertical) video {
   width: 100%;
   display: block;
   height: auto;
@@ -44,7 +52,22 @@
   background: rgba(0, 0, 0, 0.6);
 }
 
+/* Meta text under the video */
+
+.video-meta {
+  margin-top: 0.4rem;
+  text-align: left;
+}
+
+.video-category {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  opacity: 0.7;
+  margin-bottom: 0.1rem;
+}
+
 .video-title {
   font-size: 0.9rem;
-  margin-top: 0.4rem;
+  font-weight: 600;
 }
