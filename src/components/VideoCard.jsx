@@ -2,7 +2,6 @@ import { useRef, useState, useEffect } from "react";
 import "../styles/VideoCard.css";
 
 export default function VideoCard({
-  id,
   category,
   title,
   videoSrc,
@@ -16,7 +15,7 @@ export default function VideoCard({
   const [isPlaying, setIsPlaying] = useState(false);
   const [muted, setMuted] = useState(true);
 
-  // Autoplay muted on mount if requested (e.g. for social reels)
+  // Autoplay muted on mount if requested (for social reels)
   useEffect(() => {
     const v = videoRef.current;
     if (!v || !autoPlayMuted) return;
@@ -26,12 +25,11 @@ export default function VideoCard({
       .play()
       .then(() => setIsPlaying(true))
       .catch(() => {
-        // Browser blocked autoplay – leave it paused
+        // Autoplay might be blocked, that's fine
       });
   }, [autoPlayMuted]);
 
-  // If this card is part of a "controlled" group (Examples, etc.),
-  // pause it when it stops being active
+  // For controlled groups (Examples), pause when not active
   useEffect(() => {
     const v = videoRef.current;
     if (!v || typeof isActive !== "boolean" || !onSetActive) return;
@@ -100,14 +98,11 @@ export default function VideoCard({
         />
         <button
           type="button"
-          className="mute-toggle"
+          className={`mute-toggle ${muted ? "muted" : "unmuted"}`}
           onClick={toggleMute}
         >
-          {muted ? "🔇" : "🔊"}
+          <span className="note-icon">♫</span>
         </button>
-        <div className="play-indicator">
-          {isPlaying ? "Pause" : "Play"}
-        </div>
       </div>
 
       {(category || title) && (

@@ -46,11 +46,9 @@ collections:
             label: "Social Videos"
             widget: "list"
             fields:
-              - { name: "id", label: "ID", widget: "string" }
               - { name: "category", label: "Category", widget: "string" }
               - { name: "title", label: "Brand / Title", widget: "string" }
               - { name: "videoSrc", label: "Video File", widget: "file" }
-              - { name: "poster", label: "Thumbnail", widget: "image" }
 
           - name: "exampleVideos"
             label: "Example Videos"

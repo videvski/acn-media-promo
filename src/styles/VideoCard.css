@@ -23,6 +23,7 @@
   display: block;
 }
 
+/* Fallback / non-vertical */
 .video-wrapper:not(.video-wrapper-vertical) video {
   width: 100%;
   display: block;
@@ -34,22 +35,25 @@
   right: 8px;
   bottom: 8px;
   border: none;
-  border-radius: 20px;
+  border-radius: 999px;
   padding: 0.25rem 0.5rem;
   font-size: 0.8rem;
   cursor: pointer;
   background: rgba(0, 0, 0, 0.6);
   color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.play-indicator {
-  position: absolute;
-  left: 8px;
-  bottom: 8px;
-  font-size: 0.8rem;
-  padding: 0.3rem 0.6rem;
-  border-radius: 999px;
-  background: rgba(0, 0, 0, 0.6);
+.mute-toggle .note-icon {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+/* Optional subtle state styling */
+.mute-toggle.unmuted {
+  background: rgba(0, 0, 0, 0.9);
 }
 
 /* Meta text under the video */
