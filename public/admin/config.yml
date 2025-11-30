@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: videvski/acn-media-promo   
+  repo: videvski/acn-media-promo
   branch: main                         
   
 media_folder: "public/media/uploads"
