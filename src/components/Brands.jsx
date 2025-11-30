@@ -1,12 +1,11 @@
-import "../styles/BrandsSection.css";
+import "../styles/Brands.css";
 
-export default function BrandsSection({ brands }) {
+export default function Brands({ brands }) {
   if (!brands || brands.length === 0) return null;
 
   return (
-    <section className="section brands-section">
+    <div className="brands-section">
       <div className="section-inner">
-        <h2 className="section-title">Brands we’ve worked with</h2>
         <div className="brands-grid">
           {brands.map((brand, idx) => (
             <div className="brand-item" key={brand.name || idx}>
@@ -17,13 +16,11 @@ export default function BrandsSection({ brands }) {
                   loading="lazy"
                 />
               )}
-              {brand.name && (
-                <p className="brand-name">{brand.name}</p>
-              )}
+              {brand.name && <p className="brand-name">{brand.name}</p>}
             </div>
           ))}
         </div>
       </div>
-    </section>
+    </div>
   );
 }

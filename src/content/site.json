@@ -24,19 +24,7 @@
       }
     ]
   },
-  "brands": [
-    {
-      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/LinkedIn_icon.svg/768px-LinkedIn_icon.svg.png",
-      "name": "linkedin"
-    }
-  ],
-  "socialVideos": [
-    {
-      "videoSrc": "/media/uploads/geneysis-expo.mp4",
-      "title": "Genesis Expo",
-      "poster": "/media/uploads/imgi_60_dsc04560-enhanced-.jpg",
-      "id": "Genesis Expo"
-    }
-  ],
+  "brands": [],
+  "socialVideos": [],
   "exampleVideos": []
 }

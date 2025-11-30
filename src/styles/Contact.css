@@ -1,0 +1,197 @@
+/* -------------------------------------------
+   Contact wrapper
+-------------------------------------------- */
+
+.contact-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+/* Compact, minimal section */
+.contact-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  min-height: auto;
+}
+
+/* Form container */
+.contact-form {
+  max-width: 500px;
+  width: 100%;
+  padding: 0;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+/* Form layout */
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  margin: 0;
+  padding: 0;
+}
+
+/* Name + phone row */
+.contact-row {
+  display: flex;
+  gap: 0.75rem;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.field-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+/* Labels */
+.contact-form label {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  text-align: left;
+  margin-bottom: 0.25rem;
+}
+
+.contact-form label span {
+  color: red;
+  margin-left: 0.25rem;
+}
+
+/* Inputs */
+.contact-form input,
+textarea {
+  padding: 0.4rem 0.6rem;
+  border: 1px solid #000;
+  border-radius: 3px;
+  font-size: 1rem;
+  font-family: "Montserrat", sans-serif;
+  width: 100%;
+  background: transparent;
+  transition: border-color 0.25s ease, box-shadow 0.2s ease;
+  margin: 0;
+}
+
+/* Hover fade */
+.contact-form input:hover {
+  border-color: #666;
+}
+
+/* Focus stays black with subtle glow */
+.contact-form input:focus {
+  outline: none;
+  border-color: #4681f4;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.06);
+}
+
+/* Button aligned center */
+.contact-form button {
+  margin: 0.85rem auto 0;
+  padding: 0.75rem 2.4rem;
+  border: none;
+  background: #4681f4;
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.95rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  border-radius: 999px;
+  transition: background 0.2s ease, transform 0.15s ease,
+    box-shadow 0.2s ease;
+}
+
+.contact-form button:hover {
+  background: #333;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.15);
+}
+
+/* Error text */
+.error {
+  color: red;
+  font-size: 0.8rem;
+  margin-top: 0.1rem;
+  margin-bottom: 0;
+  font-family: "Metropolis", sans-serif;
+}
+
+/* Placeholder recaptcha wrapper (still required for Netlify) */
+[data-netlify-recaptcha] {
+  margin: 0;
+  padding: 0;
+}
+
+/* Mobile layout: stack Name + Phone */
+@media (max-width: 768px) {
+  .contact-row {
+    flex-direction: column;
+  }
+}
+
+/* Toast message */
+.contact-toast {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.9);
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  z-index: 9999;
+  animation: contact-toast-fade 5s ease-in-out forwards;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+}
+
+@keyframes contact-toast-fade {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 10px);
+  }
+  10%,
+  90% {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, 10px);
+  }
+}
+
+@media (max-width: 600px) {
+  .contact-toast {
+    width: 90%;
+    text-align: center;
+  }
+}
+
+/* Intro text from site.json */
+.contact-intro-headline {
+  font-family: "Metropolis", sans-serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin: 0 0 0.25rem;
+}
+
+.contact-intro-subheadline {
+  font-family: "Metropolis", sans-serif;
+  font-size: 0.9rem;
+  margin: 0 0 0.75rem;
+}

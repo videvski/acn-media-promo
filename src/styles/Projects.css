@@ -1,0 +1,402 @@
+/* -------------------------------------------
+   Base layout
+-------------------------------------------- */
+
+.content-container {
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.content-container h1 {
+  padding-top: 6rem;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.projects-page {
+  margin: 0 auto;
+  padding: 6rem 0 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  width: 100%;
+  max-width: 1900px;
+  padding-inline: 1.5rem;
+  box-sizing: border-box;
+}
+.social-strip-placeholder {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto 1.5rem;
+  height: 420px; /* approximate height of the social grid / carousel */
+  background: transparent;
+}
+
+.projects-section {
+  padding: 0 20px;
+  margin-bottom: 4rem;
+}
+
+.projects-section-title {
+  font-family: "helvetica", sans-serif;
+  font-weight: 800;
+  font-size: 3rem;
+  margin-bottom: 1.75rem;
+  text-align: center;
+}
+
+/* -------------------------------------------
+   Social media strip
+-------------------------------------------- */
+
+.social-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  text-align: center;
+}
+
+.social-video-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 0 1 300px;
+  max-width: 350px;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .social-video-card {
+    flex: 0 1 280px;
+    max-width: 280px;
+    max-height: 600px;
+  }
+}
+
+.social-video-title {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 0.1rem;
+}
+
+.social-video-brand {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.9rem;
+}
+
+.social-video-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.social-video {
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.25s ease;
+}
+
+/* --- Mobile social carousel + phone frame --- */
+
+.social-carousel {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .social-carousel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+    width: 100%;
+  }
+
+  .social-carousel-single {
+    display: flex;
+    justify-content: center;
+    width: 70vw;
+    max-width: 380px;
+  }
+
+  .phone-frame {
+    position: relative;
+    padding: 0.9rem 0.45rem 1.1rem;
+    border-radius: 2rem;
+    border: 2px solid #111;
+    background: #000;
+    box-shadow: 0 18px 30px rgba(0, 0, 0, 0.35);
+    width: 100%;
+  }
+
+  .phone-frame .social-video-wrapper {
+    border-radius: 1.6rem;
+    overflow: hidden;
+    background: #000;
+  }
+
+  .phone-frame .social-video {
+    border-radius: 1.4rem;
+  }
+
+  .phone-frame::before {
+    content: "";
+    position: absolute;
+    top: 0.4rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 34%;
+    height: 0.35rem;
+    border-radius: 999px;
+    background: #111;
+  }
+
+  .social-carousel-dots {
+    display: flex;
+    gap: 0.35rem;
+    justify-content: center;
+    margin-top: 0.1rem;
+  }
+
+  .social-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 999px;
+    border: none;
+    background: #ccc;
+    padding: 0;
+  }
+
+  .social-dot.active {
+    background: #111;
+    width: 25px;
+  }
+}
+
+/* -------------------------------------------
+   Scroll-to-top button
+-------------------------------------------- */
+
+.scroll-top-btn {
+  position: fixed;
+  bottom: 3rem;
+  right: 5rem;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  background: #111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0.9;
+  transition: opacity 0.3s ease, transform 0.2s ease;
+  z-index: 999;
+}
+
+.scroll-top-btn:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.arrow-up {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-left: 3px solid #fff;
+  border-bottom: 3px solid #fff;
+  transform: rotate(135deg);
+  margin-bottom: -2px;
+}
+
+/* -------------------------------------------
+   CTA button
+-------------------------------------------- */
+
+.section-cta-wrapper {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.cta-button {
+  padding: 0.75rem 1.9rem;
+  border: none;
+  background: #4681f4;
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.9rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  max-width: 220px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease, transform 0.15s ease,
+    box-shadow 0.2s ease;
+}
+
+.cta-button:hover {
+  background: #333;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+}
+
+/* -------------------------------------------
+   Main Offer section
+-------------------------------------------- */
+
+.main-offer-wrapper {
+  height: 600px;
+  width: 100%;
+  background: #f7f7f7;
+  padding: 3.5rem 0;
+  margin: 0 0 4rem;
+}
+
+.main-offer-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.main-offer-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.main-offer-title {
+  font-family: "helvetica", sans-serif;
+  font-weight: 800;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.main-offer-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.9rem;
+  margin: 1.5rem 0 1.75rem;
+}
+
+.main-offer-item {
+  flex: 0 1 240px;
+  max-width: 260px;
+  overflow: hidden;
+  border-radius: 14px;
+}
+
+.main-offer-item img,
+.main-offer-item video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.main-offer-item:hover img,
+.main-offer-item:hover video {
+  transform: scale(1.03);
+}
+
+.main-offer-list {
+  list-style: none;
+  margin: 1.5rem 0 2rem;
+  padding: 0;
+  font-family: "Metropolis", sans-serif;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.main-offer-list li {
+  margin-bottom: 0.4rem;
+}
+
+/* -------------------------------------------
+   Responsive adjustments
+-------------------------------------------- */
+
+@media (max-width: 1024px) {
+  .projects-page {
+    padding-top: 5rem;
+  }
+
+  .projects-section-title {
+    font-size: 2.2rem;
+  }
+  .contact-section-title {
+    font-size: 2rem;
+  }
+  .main-offer-title {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .projects-page {
+    padding-top: 4.5rem;
+  }
+
+  .projects-section-title {
+    font-size: 2rem;
+  }
+
+  .main-offer-title {
+    font-size: 1.3rem;
+  }
+
+  .scroll-top-btn {
+    right: 1.5rem;
+    bottom: 5rem;
+  }
+
+  .main-offer-item {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .contact-section-title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .projects-section-title {
+    font-size: 2rem;
+  }
+
+  .main-offer-title {
+    font-size: 1.5rem;
+  }
+  .contact-section-title {
+    font-size: 2rem;
+  }
+}
+
+/* -------------------------------------------
+   Two-line brand helper
+-------------------------------------------- */
+
+.two-line-brand {
+  min-height: 2.4em;
+  line-height: 1.2;
+  display: block;
+  font-family: "Montserrat", sans-serif;
+}
+
+.contact-section-title {
+  font-family: "helvetica", sans-serif;
+  font-weight: 800;
+  font-size: 3rem;
+  margin-bottom: 1.75rem;
+  text-align: center;
+}

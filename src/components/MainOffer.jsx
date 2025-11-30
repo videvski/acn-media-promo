@@ -1,6 +1,6 @@
-import "../styles/MainOfferSection.css";
+import "../styles/MainOffer.css";
 
-export default function MainOfferSection({ data }) {
+export default function MainOffer({ data }) {
   if (!data) return null;
 
   const { title, bullets } = data;
