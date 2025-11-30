@@ -1,0 +1,50 @@
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.2rem;
+}
+
+.video-card {
+  cursor: pointer;
+}
+
+.video-wrapper {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #111319;
+}
+
+.video-wrapper video {
+  width: 100%;
+  display: block;
+  height: auto;
+}
+
+.mute-toggle {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  border: none;
+  border-radius: 20px;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+}
+
+.play-indicator {
+  position: absolute;
+  left: 8px;
+  bottom: 8px;
+  font-size: 0.8rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.video-title {
+  font-size: 0.9rem;
+  margin-top: 0.4rem;
+}

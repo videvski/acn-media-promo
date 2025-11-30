@@ -1,0 +1,27 @@
+.main-offer-inner {
+  max-width: 760px;
+}
+
+.main-offer-content {
+  background: #10121a;
+  border-radius: 18px;
+  padding: 1.8rem 1.6rem;
+}
+
+.main-offer-title {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+}
+
+.main-offer-list {
+  list-style: none;
+  padding-left: 1rem;
+  margin: 0;
+}
+
+.main-offer-list li::before {
+  content: "• ";
+  margin-right: 0.25rem;
+  color: #4681f4;
+}

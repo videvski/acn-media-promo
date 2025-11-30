@@ -1,0 +1,61 @@
+backend:
+  name: github
+  repo: videvski/acn-media-promo   
+  branch: main                         
+  
+media_folder: "public/media/uploads"
+public_folder: "/media/uploads"
+
+collections:
+  - name: "site"
+    label: "Site Content"
+    files:
+      - name: "site"
+        label: "Site Settings"
+        file: "src/content/site.json"
+        fields:
+          - name: "contact"
+            label: "Contact"
+            widget: "object"
+            fields:
+              - { name: "headline", label: "Headline", widget: "string" }
+              - { name: "subheadline", label: "Subheadline", widget: "string" }
+              - { name: "ctaLabel", label: "CTA Label", widget: "string" }
+
+          - name: "mainOffer"
+            label: "Main Offer"
+            widget: "object"
+            fields:
+              - { name: "title", label: "Title", widget: "string" }
+              - name: "bullets"
+                label: "Bullets"
+                widget: "list"
+                field:
+                  label: "Bullet"
+                  name: "bullet"
+                  widget: "string"
+
+          - name: "brands"
+            label: "Brands"
+            widget: "list"
+            fields:
+              - { name: "name", label: "Name", widget: "string" }
+              - { name: "logo", label: "Logo", widget: "image" }
+
+          - name: "socialVideos"
+            label: "Social Videos"
+            widget: "list"
+            fields:
+              - { name: "id", label: "ID", widget: "string" }
+              - { name: "title", label: "Title", widget: "string" }
+              - { name: "videoSrc", label: "Video File", widget: "file" }
+              - { name: "poster", label: "Thumbnail", widget: "image" }
+
+          - name: "exampleVideos"
+            label: "Example Videos"
+            widget: "list"
+            fields:
+              - { name: "id", label: "ID", widget: "string" }
+              - { name: "title", label: "Title", widget: "string" }
+              - { name: "videoSrc", label: "Video File", widget: "file" }
+              - { name: "poster", label: "Thumbnail", widget: "image" }

@@ -1,0 +1,20 @@
+{
+  "contact": {
+    "headline": "Let's bring your brand to life.",
+    "subheadline": "Tell us about your project...",
+    "ctaLabel": "Lets chat!"
+  },
+  "mainOffer": {
+    "title": "Full day shoot",
+    "bullets": [
+      { "bullet": "1 x Brainstorm session" },
+      { "bullet": "1 x 8 Hour shoot" },
+      { "bullet": "7–10 day editing turnaround" },
+      { "bullet": "Video & Photo Packages" },
+      { "bullet": "Aerial Photography & Videography" }
+    ]
+  },
+  "brands": [],
+  "socialVideos": [],
+  "exampleVideos": []
+}
