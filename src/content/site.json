@@ -7,14 +7,36 @@
   "mainOffer": {
     "title": "Full day shoot",
     "bullets": [
-      { "bullet": "1 x Brainstorm session" },
-      { "bullet": "1 x 8 Hour shoot" },
-      { "bullet": "7–10 day editing turnaround" },
-      { "bullet": "Video & Photo Packages" },
-      { "bullet": "Aerial Photography & Videography" }
+      {
+        "bullet": "1 x Brainstorm session"
+      },
+      {
+        "bullet": "1 x 8 Hour shoot"
+      },
+      {
+        "bullet": "7–10 day editing turnaround"
+      },
+      {
+        "bullet": "Video & Photo Packages"
+      },
+      {
+        "bullet": "Aerial Photography & Videography"
+      }
     ]
   },
-  "brands": [],
-  "socialVideos": [],
+  "brands": [
+    {
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/LinkedIn_icon.svg/768px-LinkedIn_icon.svg.png",
+      "name": "linkedin"
+    }
+  ],
+  "socialVideos": [
+    {
+      "videoSrc": "/media/uploads/geneysis-expo.mp4",
+      "title": "Genesis Expo",
+      "poster": "/media/uploads/imgi_60_dsc04560-enhanced-.jpg",
+      "id": "Genesis Expo"
+    }
+  ],
   "exampleVideos": []
 }
