@@ -1,7 +1,7 @@
 {
   "contact": {
-    "headline": "",
-    "subheadline": "",
+    "headline": " ",
+    "subheadline": " ",
     "ctaLabel": "Lets chat!"
   },
   "mainOffer": {
@@ -25,6 +25,12 @@
     ]
   },
   "brands": [],
-  "socialVideos": [],
+  "socialVideos": [
+    {
+      "videoSrc": "/media/uploads/cvd-glass.mp4",
+      "category": "Brand",
+      "title": "CVD Glass"
+    }
+  ],
   "exampleVideos": []
 }
