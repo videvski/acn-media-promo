@@ -3,6 +3,7 @@ backend:
   repo: videvski/acn-media-promo
   branch: main
 
+# Default upload location (fallback)
 media_folder: "public/media/uploads"
 public_folder: "/media/uploads"
 
@@ -17,7 +18,7 @@ collections:
           - label: "Sections"
             name: "sections"
             widget: "list"
-            typeKey: "type"  # Decap will write a `type` key into each section
+            typeKey: "type"
             types:
 
               # ======================
@@ -42,6 +43,9 @@ collections:
                     label: "Videos / Photos"
                     widget: "list"
                     required: false
+                    # All gallery media for main offer go here:
+                    media_folder: "public/media/main-offer"
+                    public_folder: "/media/main-offer"
                     fields:
                       - name: "type"
                         label: "Type"
@@ -78,6 +82,9 @@ collections:
                   - name: "videos"
                     label: "Videos"
                     widget: "list"
+                    # All example videos go here:
+                    media_folder: "public/media/examples"
+                    public_folder: "/media/examples"
                     fields:
                       - { name: "category", label: "Category (top line)", widget: "string" }
                       - { name: "brand", label: "Brand name (second line)", widget: "string" }
@@ -103,6 +110,9 @@ collections:
                     label: "Logos"
                     widget: "list"
                     summary: "{{fields.name}}"
+                    # All brand logos go here:
+                    media_folder: "public/media/brands"
+                    public_folder: "/media/brands"
                     fields:
                       - { name: "logo", label: "Logo", widget: "image" }
                       - { name: "name", label: "Brand name (optional)", widget: "string", required: false }

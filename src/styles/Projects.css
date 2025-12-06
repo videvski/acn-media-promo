@@ -26,6 +26,7 @@
   padding-inline: 1.5rem;
   box-sizing: border-box;
 }
+
 .social-strip-placeholder {
   width: 100%;
   max-width: 1200px;
@@ -45,137 +46,6 @@
   font-size: 3rem;
   margin-bottom: 1.75rem;
   text-align: center;
-}
-
-/* -------------------------------------------
-   Social media strip
--------------------------------------------- */
-
-.social-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1.5rem;
-  text-align: center;
-}
-
-.social-video-card {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  flex: 0 1 300px;
-  max-width: 350px;
-  align-items: center;
-}
-
-@media (min-width: 1024px) {
-  .social-video-card {
-    flex: 0 1 280px;
-    max-width: 280px;
-    max-height: 600px;
-  }
-}
-
-.social-video-title {
-  font-family: "Montserrat", sans-serif;
-  font-size: 1rem;
-  text-transform: uppercase;
-  font-weight: 600;
-  margin-bottom: 0.1rem;
-}
-
-.social-video-brand {
-  font-family: "Montserrat", sans-serif;
-  font-size: 0.9rem;
-}
-
-.social-video-wrapper {
-  position: relative;
-  overflow: hidden;
-}
-
-.social-video {
-  width: 100%;
-  aspect-ratio: 9 / 16;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.25s ease;
-}
-
-/* --- Mobile social carousel + phone frame --- */
-
-.social-carousel {
-  display: none;
-}
-
-@media (max-width: 768px) {
-  .social-carousel {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.6rem;
-    width: 100%;
-  }
-
-  .social-carousel-single {
-    display: flex;
-    justify-content: center;
-    width: 70vw;
-    max-width: 380px;
-  }
-
-  .phone-frame {
-    position: relative;
-    padding: 0.9rem 0.45rem 1.1rem;
-    border-radius: 2rem;
-    border: 2px solid #111;
-    background: #000;
-    box-shadow: 0 18px 30px rgba(0, 0, 0, 0.35);
-    width: 100%;
-  }
-
-  .phone-frame .social-video-wrapper {
-    border-radius: 1.6rem;
-    overflow: hidden;
-    background: #000;
-  }
-
-  .phone-frame .social-video {
-    border-radius: 1.4rem;
-  }
-
-  .phone-frame::before {
-    content: "";
-    position: absolute;
-    top: 0.4rem;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 34%;
-    height: 0.35rem;
-    border-radius: 999px;
-    background: #111;
-  }
-
-  .social-carousel-dots {
-    display: flex;
-    gap: 0.35rem;
-    justify-content: center;
-    margin-top: 0.1rem;
-  }
-
-  .social-dot {
-    width: 14px;
-    height: 14px;
-    border-radius: 999px;
-    border: none;
-    background: #ccc;
-    padding: 0;
-  }
-
-  .social-dot.active {
-    background: #111;
-    width: 25px;
-  }
 }
 
 /* -------------------------------------------
@@ -383,15 +253,8 @@
 }
 
 /* -------------------------------------------
-   Two-line brand helper
+   Contact section title
 -------------------------------------------- */
-
-.two-line-brand {
-  min-height: 2.4em;
-  line-height: 1.2;
-  display: block;
-  font-family: "Montserrat", sans-serif;
-}
 
 .contact-section-title {
   font-family: "Barlow", sans-serif !important;
@@ -400,6 +263,8 @@
   margin-bottom: 1.75rem;
   text-align: center;
 }
+
+/* CTA wrapper override */
 .section-cta-wrapper {
   margin-top: 1.5rem;
   display: flex;
