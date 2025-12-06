@@ -1,14 +1,14 @@
 {
   "sections": [
     {
-      "type": "mainOffer",
+      "type": "contact",
       "enabled": true,
-      "order": 1,
+      "order": 4,
       "buttonLabel": "Lets chat!",
-      "mainTitle": "My main offer",
-      "offerTitle": "Full day shoot",
-      "text": "Your offer description here...",
-      "gallery": []
+      "title": "",
+      "headline": " ",
+      "subheadline": " ",
+      "formCtaLabel": "Lets chat!"
     },
     {
       "type": "brands",
@@ -17,7 +17,10 @@
       "buttonLabel": "Lets chat!",
       "title": "Brands we've worked with",
       "brands": [
-        { "logo": "/media/uploads/brand1.svg", "name": "Brand One" }
+        {
+          "logo": "/media/uploads/brand1.svg",
+          "name": "Brand One"
+        }
       ]
     },
     {
@@ -36,14 +39,33 @@
       ]
     },
     {
-      "type": "contact",
+      "type": "mainOffer",
       "enabled": true,
-      "order": 4,
+      "order": 1,
       "buttonLabel": "Lets chat!",
-      "title": "",
-      "headline": " ",
-      "subheadline": " ",
-      "formCtaLabel": "Lets chat!"
+      "mainTitle": "My main offer",
+      "offerTitle": "Full day shoot",
+      "text": "Your offer description here...",
+      "gallery": []
+    },
+    {
+      "type": "examples",
+      "enabled": true,
+      "order": 1,
+      "title": "Examples",
+      "layout": "horizontal",
+      "videos": [
+        {
+          "videoSrc": "/media/uploads/be-in-motion.mp4",
+          "category": "Brand Launch",
+          "brand": "Be in Motion"
+        },
+        {
+          "videoSrc": "/media/uploads/unveiled.mp4",
+          "category": "Cosmetics Photoshoot",
+          "brand": "Unveiled"
+        }
+      ]
     }
   ]
 }
