@@ -1,9 +1,15 @@
+.brands-section-inner {
+  padding: 3rem 1.5rem;
+}
+
 .brands-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   gap: 1.5rem;
+  align-items: center;
 }
 
+/* Base brand item style */
 .brand-item {
   display: flex;
   flex-direction: column;
@@ -11,6 +17,7 @@
   gap: 0.4rem;
 }
 
+/* Default logo size */
 .brand-item img {
   max-width: 110px;
   max-height: 50px;
@@ -18,8 +25,26 @@
   filter: grayscale(1);
 }
 
+/* First 3 logos: bigger and can span 2 columns on larger screens */
+.brand-item-featured {
+  grid-column: span 2;
+}
+
+.brand-item-featured img {
+  max-width: 170px;
+  max-height: 80px;
+}
+
+/* On smaller screens, we let them take full width instead of spanning 2 columns awkwardly */
+@media (max-width: 640px) {
+  .brand-item-featured {
+    grid-column: span 1;
+  }
+}
+
 .brand-name {
   font-size: 0.8rem;
   text-transform: uppercase;
   opacity: 0.7;
+  text-align: center;
 }

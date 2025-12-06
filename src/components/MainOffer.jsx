@@ -3,25 +3,65 @@ import "../styles/MainOffer.css";
 export default function MainOffer({ data }) {
   if (!data) return null;
 
-  const { title, bullets } = data;
+  const {
+    mainTitle,
+    offerTitle,
+    benefits = [],
+    gallery = [],
+  } = data;
 
-  const normalizedBullets = (bullets || [])
+  const normalizedBenefits = benefits
     .map((b) => (typeof b === "string" ? b : b?.bullet || ""))
     .filter(Boolean);
 
   return (
     <section className="section main-offer-section">
       <div className="section-inner main-offer-inner">
-        <h2 className="section-title">My main offer</h2>
+        {mainTitle && (
+          <h2 className="section-title main-offer-heading">
+            {mainTitle}
+          </h2>
+        )}
 
         <div className="main-offer-content">
-          <h3 className="main-offer-title">{title}</h3>
+          {offerTitle && (
+            <h3 className="main-offer-title">{offerTitle}</h3>
+          )}
 
-          <ul className="main-offer-list">
-            {normalizedBullets.map((item, idx) => (
-              <li key={idx}>{item}</li>
-            ))}
-          </ul>
+          {normalizedBenefits.length > 0 && (
+            <ul className="main-offer-list">
+              {normalizedBenefits.map((item, idx) => (
+                <li key={idx}>{item}</li>
+              ))}
+            </ul>
+          )}
+
+          {gallery.length > 0 && (
+            <div className="main-offer-gallery">
+              {gallery.map((item, idx) => {
+                if (item.type === "video") {
+                  return (
+                    <div className="main-offer-item" key={idx}>
+                      <video
+                        src={item.src}
+                        poster={item.poster}
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                      />
+                    </div>
+                  );
+                }
+
+                return (
+                  <div className="main-offer-item" key={idx}>
+                    <img src={item.src} alt={item.alt || ""} loading="lazy" />
+                  </div>
+                );
+              })}
+            </div>
+          )}
         </div>
       </div>
     </section>

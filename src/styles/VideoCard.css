@@ -5,12 +5,14 @@
 }
 
 .video-card {
-  cursor: pointer;
+    display: flex;
+    cursor: pointer;
+    flex-direction: column;
+    align-items: center;
 }
 
 .video-wrapper {
   position: relative;
-  border-radius: 12px;
   overflow: hidden;
   background: #111319;
 }
@@ -32,28 +34,40 @@
 
 .mute-toggle {
   position: absolute;
-  right: 8px;
-  bottom: 8px;
+  right: 0.75rem;
+  bottom: 0.75rem;
   border: none;
   border-radius: 999px;
-  padding: 0.25rem 0.5rem;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   cursor: pointer;
-  background: rgba(0, 0, 0, 0.6);
+  background: transparent;
   color: #fff;
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
 }
-
+    
+.mute-toggle :hover {
+  border-color: transparent;
+  opacity: 100%;
+  outline: none;
+}
 .mute-toggle .note-icon {
-  font-size: 1rem;
-  line-height: 1;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  outline: none;
 }
 
 /* Optional subtle state styling */
 .mute-toggle.unmuted {
-  background: rgba(0, 0, 0, 0.9);
+    color: rgb(0, 0, 0);
+    opacity: 1;
+    pointer-events: auto;
+    background: rgba(255, 255, 255, 0.9);
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
 /* Meta text under the video */
@@ -64,14 +78,16 @@
 }
 
 .video-category {
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  opacity: 0.7;
-  margin-bottom: 0.1rem;
+  font-family: "Figtree", sans-serif !important;
+  font-weight: 500;
+  font-size: 1.05rem;
+  letter-spacing: 0.04em;
 }
 
 .video-title {
-  font-size: 0.9rem;
-  font-weight: 600;
+  min-height: 2.4em;
+  line-height: 1.2;
+  display: block;
+  font-family: "Inter", sans-serif !important;
+  font-weight: 500;
 }

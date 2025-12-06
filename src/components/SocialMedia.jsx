@@ -10,13 +10,12 @@ export default function SocialMedia({ videos }) {
       <div className="section-inner">
         <div className="social-grid">
           {videos.map((v, idx) => (
-            <div className="social-video-card" key={v.id || idx}>
+            <div className="social-video-card" key={idx}>
               <VideoCard
-                id={v.id || `social-${idx}`}
+                id={`social-${idx}`}
                 category={v.category}
                 title={v.title}
                 videoSrc={v.videoSrc}
-                poster={v.poster}
                 autoPlayMuted={true}
                 isVertical={true}
               />

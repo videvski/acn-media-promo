@@ -2,54 +2,41 @@ import { useRef, useState, useEffect } from "react";
 import "../styles/VideoCard.css";
 
 export default function VideoCard({
+  id,
   category,
   title,
   videoSrc,
   poster,
-  isActive,
-  onSetActive,
   autoPlayMuted = false,
   isVertical = false,
 }) {
   const videoRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
-  const [muted, setMuted] = useState(true);
+  const [muted, setMuted] = useState(autoPlayMuted !== false);
 
-  // Autoplay muted on mount if requested (for social reels)
   useEffect(() => {
     const v = videoRef.current;
-    if (!v || !autoPlayMuted) return;
+    if (!v) return;
 
-    v.muted = true;
-    v
-      .play()
-      .then(() => setIsPlaying(true))
-      .catch(() => {
-        // Autoplay might be blocked, that's fine
-      });
-  }, [autoPlayMuted]);
+    v.loop = true;
+    v.playsInline = true;
+    v.muted = muted;
 
-  // For controlled groups (Examples), pause when not active
-  useEffect(() => {
-    const v = videoRef.current;
-    if (!v || typeof isActive !== "boolean" || !onSetActive) return;
-
-    if (!isActive) {
-      v.pause();
-      setIsPlaying(false);
-      v.muted = true;
-      setMuted(true);
+    if (autoPlayMuted && v.paused) {
+      v
+        .play()
+        .then(() => setIsPlaying(true))
+        .catch(() => {
+          // Autoplay might be blocked, ignore
+        });
     }
-  }, [isActive, onSetActive]);
+  }, [autoPlayMuted, muted]);
 
-  const togglePlay = () => {
+  const handleTogglePlay = () => {
     const v = videoRef.current;
     if (!v) return;
 
     if (v.paused) {
-      if (onSetActive) {
-        onSetActive(id);
-      }
       v
         .play()
         .then(() => setIsPlaying(true))
@@ -65,34 +52,27 @@ export default function VideoCard({
     const v = videoRef.current;
     if (!v) return;
 
-    if (onSetActive && typeof isActive === "boolean" && !isActive) {
-      onSetActive(id);
-    }
-
     const nextMuted = !muted;
     v.muted = nextMuted;
     setMuted(nextMuted);
-
-    if (!nextMuted && v.paused) {
-      v
-        .play()
-        .then(() => setIsPlaying(true))
-        .catch(() => {});
-    }
   };
 
-  const wrapperClass = isVertical
-    ? "video-wrapper video-wrapper-vertical"
-    : "video-wrapper";
-
   return (
-    <div className="video-card" onClick={togglePlay}>
-      <div className={wrapperClass}>
+    <article
+      className={`video-card ${isVertical ? "vertical" : "horizontal"}`}
+      id={id}
+      onClick={handleTogglePlay}
+    >
+      <div className="video-card-meta">
+        {category && <p className="video-card-category">{category}</p>}
+        {title && <p className="video-card-title">{title}</p>}
+      </div>
+
+      <div className="video-wrapper">
         <video
           ref={videoRef}
           src={videoSrc}
           poster={poster}
-          muted={muted}
           playsInline
           preload="metadata"
         />
@@ -104,15 +84,6 @@ export default function VideoCard({
           <span className="note-icon">♫</span>
         </button>
       </div>
-
-      {(category || title) && (
-        <div className="video-meta">
-          {category && (
-            <div className="video-category">{category}</div>
-          )}
-          {title && <div className="video-title">{title}</div>}
-        </div>
-      )}
-    </div>
+    </article>
   );
 }

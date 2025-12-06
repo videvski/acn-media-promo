@@ -1,12 +1,11 @@
-import { useState } from "react";
 import "../styles/Examples.css";
 import "../styles/VideoCard.css";
 import VideoCard from "./VideoCard";
 
-export default function Examples({ videos }) {
+export default function Examples({ videos, layout = "vertical" }) {
   if (!videos || videos.length === 0) return null;
 
-  const [activeId, setActiveId] = useState(null);
+  const isVertical = layout === "vertical";
 
   return (
     <div className="examples-section">
@@ -18,13 +17,12 @@ export default function Examples({ videos }) {
               <VideoCard
                 key={id}
                 id={id}
-                title={v.title}
+                category={v.category}
+                title={v.brand || v.title}
                 videoSrc={v.videoSrc}
                 poster={v.poster}
-                isActive={activeId === id}
-                onSetActive={setActiveId}
-                autoPlayMuted={false}
-                isVertical={false}
+                autoPlayMuted={true}
+                isVertical={isVertical}
               />
             );
           })}

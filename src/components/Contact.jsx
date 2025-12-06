@@ -25,9 +25,9 @@ export default function Contact({ data }) {
             <div className="contact-row">
               <div className="field-group">
                 <label htmlFor="name">
-                  Name<span>*</span>
+                  Name
                 </label>
-                <input id="name" name="name" type="text" required />
+                <input id="name" name="name" type="text" />
               </div>
 
               <div className="field-group">

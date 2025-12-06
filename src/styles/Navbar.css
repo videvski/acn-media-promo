@@ -1,3 +1,7 @@
+.promo-navbar,
+.promo-navbar * {
+  font-family: "Inter", sans-serif !important;
+}
 .promo-navbar {
   position: fixed;
   top: 0;

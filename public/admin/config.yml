@@ -14,47 +14,77 @@ collections:
         label: "Site Settings"
         file: "src/content/site.json"
         fields:
-          - name: "contact"
-            label: "Contact"
-            widget: "object"
+          - name: "sections"
+            label: "Sections"
+            widget: "list"
+            summary: "{{fields.type}} – {{fields.title}}"
             fields:
-              - { name: "headline", label: "Headline", widget: "string" }
-              - { name: "subheadline", label: "Subheadline", widget: "string" }
-              - { name: "ctaLabel", label: "CTA Label", widget: "string" }
+              - { name: "id", label: "ID", widget: "string", required: false }
+              - name: "type"
+                label: "Section type"
+                widget: "select"
+                options:
+                  - { label: "Contact", value: "contact" }
+                  - { label: "Examples", value: "examples" }
+                  - { label: "Main Offer", value: "mainOffer" }
+                  - { label: "Brands", value: "brands" }
+              - { name: "enabled", label: "Enabled", widget: "boolean", default: true }
+              - { name: "order", label: "Order", widget: "number", default: 1 }
+              - { name: "title", label: "Section title", widget: "string", required: false }
+              - { name: "buttonLabel", label: "Contact button label", widget: "string", required: false }
 
-          - name: "mainOffer"
-            label: "Main Offer"
-            widget: "object"
-            fields:
-              - { name: "title", label: "Title", widget: "string" }
-              - name: "bullets"
-                label: "Bullets"
+              # Contact-specific fields
+              - { name: "headline", label: "Contact headline", widget: "string", required: false }
+              - { name: "subheadline", label: "Contact subheadline", widget: "text", required: false }
+              - { name: "formCtaLabel", label: "Contact form button label", widget: "string", required: false }
+
+              # Examples-specific fields
+              - name: "layout"
+                label: "Examples layout"
+                widget: "select"
+                required: false
+                options:
+                  - { label: "Vertical videos", value: "vertical" }
+                  - { label: "Horizontal videos", value: "horizontal" }
+              - name: "videos"
+                label: "Videos"
                 widget: "list"
-                field:
-                  label: "Bullet"
-                  name: "bullet"
-                  widget: "string"
+                required: false
+                fields:
+                  - { name: "category", label: "Category", widget: "string", required: false }
+                  - { name: "brand", label: "Brand name", widget: "string", required: false }
+                  - { name: "title", label: "Title (fallback)", widget: "string", required: false }
+                  - { name: "videoSrc", label: "Video file", widget: "file" }
+                  - { name: "poster", label: "Poster image (optional)", widget: "file", required: false }
 
-          - name: "brands"
-            label: "Brands"
-            widget: "list"
-            fields:
-              - { name: "name", label: "Name", widget: "string" }
-              - { name: "logo", label: "Logo", widget: "image" }
+              # Main-offer-specific fields
+              - { name: "mainTitle", label: "Main offer heading", widget: "string", required: false }
+              - { name: "offerTitle", label: "Offer title", widget: "string", required: false }
+              - name: "benefits"
+                label: "Benefits"
+                widget: "list"
+                required: false
+                field: { name: "benefit", label: "Benefit", widget: "string" }
+              - name: "gallery"
+                label: "Main offer gallery (images / videos)"
+                widget: "list"
+                required: false
+                fields:
+                  - name: "type"
+                    label: "Type"
+                    widget: "select"
+                    options:
+                      - { label: "Image", value: "image" }
+                      - { label: "Video", value: "video" }
+                  - { name: "src", label: "File", widget: "file" }
+                  - { name: "poster", label: "Video poster (optional)", widget: "file", required: false }
+                  - { name: "alt", label: "Alt text (for images)", widget: "string", required: false }
 
-          - name: "socialVideos"
-            label: "Social Videos"
-            widget: "list"
-            fields:
-              - { name: "category", label: "Category", widget: "string" }
-              - { name: "title", label: "Brand / Title", widget: "string" }
-              - { name: "videoSrc", label: "Video File", widget: "file" }
-
-          - name: "exampleVideos"
-            label: "Example Videos"
-            widget: "list"
-            fields:
-              - { name: "id", label: "ID", widget: "string" }
-              - { name: "title", label: "Title", widget: "string" }
-              - { name: "videoSrc", label: "Video File", widget: "file" }
-              - { name: "poster", label: "Thumbnail", widget: "image" }
+              # Brands-specific fields
+              - name: "brands"
+                label: "Brands (logos)"
+                widget: "list"
+                required: false
+                fields:
+                  - { name: "logo", label: "Logo", widget: "file" }
+                  - { name: "name", label: "Brand name (optional)", widget: "string", required: false }

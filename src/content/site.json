@@ -1,41 +1,83 @@
 {
-  "contact": {
-    "headline": " ",
-    "subheadline": " ",
-    "ctaLabel": "Lets chat!"
-  },
-  "mainOffer": {
-    "title": "Full day shoot",
-    "bullets": [
-      {
-        "bullet": "1 x Brainstorm session"
-      },
-      {
-        "bullet": "1 x 8 Hour shoot"
-      },
-      {
-        "bullet": "7–10 day editing turnaround"
-      },
-      {
-        "bullet": "Video & Photo Packages"
-      },
-      {
-        "bullet": "Aerial Photography & Videography"
-      }
-    ]
-  },
-  "brands": [],
-  "socialVideos": [
+  "sections": [
     {
-      "videoSrc": "/media/uploads/cvd-glass.mp4",
-      "category": "Brand",
-      "title": "CVD Glass"
+      "id": "main-offer-1",
+      "type": "mainOffer",
+      "enabled": true,
+      "order": 1,
+      "mainTitle": "My main offer",
+      "offerTitle": "Full day shoot",
+      "benefits": [
+        "1 x Brainstorm session",
+        "1 x 8 Hour shoot",
+        "7–10 day editing turnaround",
+        "Video & Photo Packages",
+        "Aerial Photography & Videography"
+      ],
+      "gallery": [],
+      "buttonLabel": "Lets chat!"
     },
     {
-      "category": "Collaboration",
-      "videoSrc": "/media/uploads/geneysis-x-hyatt-hotel.mp4",
-      "title": "Geneysis x Hyatt Hotel"
+      "id": "brands-1",
+      "type": "brands",
+      "enabled": true,
+      "order": 2,
+      "title": "Brands we've worked with",
+      "buttonLabel": "Lets chat!",
+      "brands": [
+        {
+          "logo": "/media/uploads/brand1.svg",
+          "name": "Brand One"
+        },
+        {
+          "logo": "/media/uploads/brand2.svg",
+          "name": "Brand Two"
+        },
+        {
+          "logo": "/media/uploads/brand3.svg",
+          "name": "Brand Three"
+        },
+        {
+          "logo": "/media/uploads/brand4.svg",
+          "name": "Brand Four"
+        },
+        {
+          "logo": "/media/uploads/brand5.svg",
+          "name": "Brand Five"
+        }
+      ]
+    },
+    {
+      "id": "examples-1",
+      "type": "examples",
+      "enabled": true,
+      "order": 3,
+      "title": "Examples",
+      "layout": "vertical",
+      "buttonLabel": "Lets chat!",
+      "videos": [
+        {
+          "videoSrc": "/media/uploads/cvd-glass.mp4",
+          "category": "Brand",
+          "brand": "CVD Glass"
+        },
+        {
+          "videoSrc": "/media/uploads/geneysis-x-hyatt-hotel.mp4",
+          "category": "Collaboration",
+          "brand": "Geneysis x Hyatt Hotel"
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "type": "contact",
+      "enabled": true,
+      "order": 4,
+      "title": "",
+      "headline": " ",
+      "subheadline": " ",
+      "formCtaLabel": "Lets chat!",
+      "buttonLabel": "Lets chat!"
     }
-  ],
-  "exampleVideos": []
+  ]
 }

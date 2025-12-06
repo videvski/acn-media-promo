@@ -1,0 +1,32 @@
+/* ---------------------------
+   INTER (Medium – 500)
+---------------------------- */
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ---------------------------
+   FIGTREE (Medium – 500)
+---------------------------- */
+@font-face {
+  font-family: "Figtree";
+  src: url("/fonts/Figtree-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ---------------------------
+   BARLOW (Bold – 700)
+---------------------------- */
+@font-face {
+  font-family: "Barlow";
+  src: url("/fonts/Barlow-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
