@@ -14,77 +14,114 @@ collections:
         label: "Site Settings"
         file: "src/content/site.json"
         fields:
-          - name: "sections"
-            label: "Sections"
+          - label: "Sections"
+            name: "sections"
             widget: "list"
-            summary: "{{fields.type}} – {{fields.title}}"
-            fields:
-              - { name: "id", label: "ID", widget: "string", required: false }
-              - name: "type"
-                label: "Section type"
-                widget: "select"
-                options:
-                  - { label: "Contact", value: "contact" }
-                  - { label: "Examples", value: "examples" }
-                  - { label: "Main Offer", value: "mainOffer" }
-                  - { label: "Brands", value: "brands" }
-              - { name: "enabled", label: "Enabled", widget: "boolean", default: true }
-              - { name: "order", label: "Order", widget: "number", default: 1 }
-              - { name: "title", label: "Section title", widget: "string", required: false }
-              - { name: "buttonLabel", label: "Contact button label", widget: "string", required: false }
+            typeKey: "type"  # Decap will write a `type` key into each section
+            types:
 
-              # Contact-specific fields
-              - { name: "headline", label: "Contact headline", widget: "string", required: false }
-              - { name: "subheadline", label: "Contact subheadline", widget: "text", required: false }
-              - { name: "formCtaLabel", label: "Contact form button label", widget: "string", required: false }
-
-              # Examples-specific fields
-              - name: "layout"
-                label: "Examples layout"
-                widget: "select"
-                required: false
-                options:
-                  - { label: "Vertical videos", value: "vertical" }
-                  - { label: "Horizontal videos", value: "horizontal" }
-              - name: "videos"
-                label: "Videos"
-                widget: "list"
-                required: false
+              # ======================
+              # MAIN OFFER SECTION
+              # ======================
+              - label: "Main offer section"
+                name: "mainOffer"
+                widget: "object"
+                summary: "Main offer – {{fields.mainTitle}}"
                 fields:
-                  - { name: "category", label: "Category", widget: "string", required: false }
-                  - { name: "brand", label: "Brand name", widget: "string", required: false }
-                  - { name: "title", label: "Title (fallback)", widget: "string", required: false }
-                  - { name: "videoSrc", label: "Video file", widget: "file" }
-                  - { name: "poster", label: "Poster image (optional)", widget: "file", required: false }
+                  # Shared controls
+                  - { name: "enabled", label: "Enabled", widget: "boolean", default: true }
+                  - { name: "order", label: "Order on page", widget: "number", default: 1 }
+                  - { name: "buttonLabel", label: "Contact button label (leave empty to hide)", widget: "string", required: false }
 
-              # Main-offer-specific fields
-              - { name: "mainTitle", label: "Main offer heading", widget: "string", required: false }
-              - { name: "offerTitle", label: "Offer title", widget: "string", required: false }
-              - name: "benefits"
-                label: "Benefits"
-                widget: "list"
-                required: false
-                field: { name: "benefit", label: "Benefit", widget: "string" }
-              - name: "gallery"
-                label: "Main offer gallery (images / videos)"
-                widget: "list"
-                required: false
+                  # Main offer specific
+                  - { name: "mainTitle", label: "Main title", widget: "string", default: "My main offer" }
+                  - { name: "offerTitle", label: "Second title", widget: "string", default: "Full day shoot" }
+                  - { name: "text", label: "Text section", widget: "text", required: false }
+
+                  - name: "gallery"
+                    label: "Videos / Photos"
+                    widget: "list"
+                    required: false
+                    fields:
+                      - name: "type"
+                        label: "Type"
+                        widget: "select"
+                        options:
+                          - { label: "Image", value: "image" }
+                          - { label: "Video", value: "video" }
+                      - { name: "src", label: "File", widget: "file" }
+                      - { name: "poster", label: "Video poster (optional)", widget: "file", required: false }
+                      - { name: "alt", label: "Alt text (for images)", widget: "string", required: false }
+
+              # ======================
+              # EXAMPLES SECTION
+              # ======================
+              - label: "Examples section"
+                name: "examples"
+                widget: "object"
+                summary: "Examples – {{fields.title}}"
                 fields:
-                  - name: "type"
-                    label: "Type"
+                  # Shared controls
+                  - { name: "enabled", label: "Enabled", widget: "boolean", default: true }
+                  - { name: "order", label: "Order on page", widget: "number", default: 1 }
+                  - { name: "buttonLabel", label: "Contact button label (leave empty to hide)", widget: "string", required: false }
+
+                  # Examples specific
+                  - { name: "title", label: "Section title", widget: "string", default: "Examples" }
+                  - name: "layout"
+                    label: "Video layout"
                     widget: "select"
                     options:
-                      - { label: "Image", value: "image" }
-                      - { label: "Video", value: "video" }
-                  - { name: "src", label: "File", widget: "file" }
-                  - { name: "poster", label: "Video poster (optional)", widget: "file", required: false }
-                  - { name: "alt", label: "Alt text (for images)", widget: "string", required: false }
+                      - { label: "Vertical videos", value: "vertical" }
+                      - { label: "Horizontal videos", value: "horizontal" }
+                    default: "vertical"
+                  - name: "videos"
+                    label: "Videos"
+                    widget: "list"
+                    fields:
+                      - { name: "category", label: "Category (top line)", widget: "string" }
+                      - { name: "brand", label: "Brand name (second line)", widget: "string" }
+                      - { name: "videoSrc", label: "Video file", widget: "file" }
+                      - { name: "poster", label: "Poster image (optional)", widget: "file", required: false }
 
-              # Brands-specific fields
-              - name: "brands"
-                label: "Brands (logos)"
-                widget: "list"
-                required: false
+              # ======================
+              # BRANDS SECTION
+              # ======================
+              - label: "Brands section"
+                name: "brands"
+                widget: "object"
+                summary: "Brands – {{fields.title}}"
                 fields:
-                  - { name: "logo", label: "Logo", widget: "file" }
-                  - { name: "name", label: "Brand name (optional)", widget: "string", required: false }
+                  # Shared controls
+                  - { name: "enabled", label: "Enabled", widget: "boolean", default: true }
+                  - { name: "order", label: "Order on page", widget: "number", default: 1 }
+                  - { name: "buttonLabel", label: "Contact button label (leave empty to hide)", widget: "string", required: false }
+
+                  # Brands specific
+                  - { name: "title", label: "Section title", widget: "string", default: "Brands we've worked with" }
+                  - name: "brands"
+                    label: "Logos"
+                    widget: "list"
+                    summary: "{{fields.name}}"
+                    fields:
+                      - { name: "logo", label: "Logo", widget: "image" }
+                      - { name: "name", label: "Brand name (optional)", widget: "string", required: false }
+
+              # ======================
+              # CONTACT SECTION
+              # ======================
+              - label: "Contact section"
+                name: "contact"
+                widget: "object"
+                summary: "Contact – {{fields.title}}"
+                fields:
+                  # Shared controls
+                  - { name: "enabled", label: "Enabled", widget: "boolean", default: true }
+                  - { name: "order", label: "Order on page", widget: "number", default: 1 }
+                  - { name: "buttonLabel", label: "Contact button label (leave empty to hide)", widget: "string", required: false }
+
+                  # Contact specific
+                  - { name: "title", label: "Section title (optional)", widget: "string", required: false }
+                  - { name: "headline", label: "Headline (optional)", widget: "string", required: false }
+                  - { name: "subheadline", label: "Subheadline (optional)", widget: "text", required: false }
+                  - { name: "formCtaLabel", label: "Form button text", widget: "string", default: "Lets chat!" }

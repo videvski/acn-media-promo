@@ -1,83 +1,49 @@
 {
   "sections": [
     {
-      "id": "main-offer-1",
       "type": "mainOffer",
       "enabled": true,
       "order": 1,
+      "buttonLabel": "Lets chat!",
       "mainTitle": "My main offer",
       "offerTitle": "Full day shoot",
-      "benefits": [
-        "1 x Brainstorm session",
-        "1 x 8 Hour shoot",
-        "7–10 day editing turnaround",
-        "Video & Photo Packages",
-        "Aerial Photography & Videography"
-      ],
-      "gallery": [],
-      "buttonLabel": "Lets chat!"
+      "text": "Your offer description here...",
+      "gallery": []
     },
     {
-      "id": "brands-1",
       "type": "brands",
       "enabled": true,
       "order": 2,
-      "title": "Brands we've worked with",
       "buttonLabel": "Lets chat!",
+      "title": "Brands we've worked with",
       "brands": [
-        {
-          "logo": "/media/uploads/brand1.svg",
-          "name": "Brand One"
-        },
-        {
-          "logo": "/media/uploads/brand2.svg",
-          "name": "Brand Two"
-        },
-        {
-          "logo": "/media/uploads/brand3.svg",
-          "name": "Brand Three"
-        },
-        {
-          "logo": "/media/uploads/brand4.svg",
-          "name": "Brand Four"
-        },
-        {
-          "logo": "/media/uploads/brand5.svg",
-          "name": "Brand Five"
-        }
+        { "logo": "/media/uploads/brand1.svg", "name": "Brand One" }
       ]
     },
     {
-      "id": "examples-1",
       "type": "examples",
       "enabled": true,
       "order": 3,
+      "buttonLabel": "Lets chat!",
       "title": "Examples",
       "layout": "vertical",
-      "buttonLabel": "Lets chat!",
       "videos": [
         {
-          "videoSrc": "/media/uploads/cvd-glass.mp4",
-          "category": "Brand",
+          "videoSrc": "/media/uploads/example1.mp4",
+          "category": "Brand Reel",
           "brand": "CVD Glass"
-        },
-        {
-          "videoSrc": "/media/uploads/geneysis-x-hyatt-hotel.mp4",
-          "category": "Collaboration",
-          "brand": "Geneysis x Hyatt Hotel"
         }
       ]
     },
     {
-      "id": "contact",
       "type": "contact",
       "enabled": true,
       "order": 4,
+      "buttonLabel": "Lets chat!",
       "title": "",
       "headline": " ",
       "subheadline": " ",
-      "formCtaLabel": "Lets chat!",
-      "buttonLabel": "Lets chat!"
+      "formCtaLabel": "Lets chat!"
     }
   ]
 }
