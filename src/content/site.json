@@ -3,7 +3,7 @@
     {
       "type": "contact",
       "enabled": true,
-      "order": 4,
+      "order": 1,
       "buttonLabel": "Lets chat!",
       "title": "",
       "headline": " ",
@@ -41,7 +41,7 @@
     {
       "type": "mainOffer",
       "enabled": true,
-      "order": 1,
+      "order": 4,
       "buttonLabel": "Lets chat!",
       "mainTitle": "My main offer",
       "offerTitle": "Full day shoot",
@@ -51,7 +51,7 @@
     {
       "type": "examples",
       "enabled": true,
-      "order": 1,
+      "order": 5,
       "title": "Examples",
       "layout": "horizontal",
       "videos": [
