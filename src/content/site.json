@@ -18,11 +18,20 @@
       "title": "Brands we've worked with",
       "brands": [
         {
-          "logo": "/media/uploads/adapt.png",
-          "name": "Brand One"
+          "logo": "/media/uploads/1-linkedin-logo.png"
+        },
+        {
+          "logo": "/media/uploads/2-microsoft_logo.png"
+        },
+        {
+          "logo": "/media/uploads/3-endeavour-energy.svg"
         },
         {
           "logo": "/media/uploads/complete-glass.png"
+        },
+        {
+          "logo": "/media/uploads/adapt.png",
+          "name": ""
         },
         {
           "logo": "/media/uploads/cvd.webp"
@@ -35,6 +44,66 @@
         },
         {
           "logo": "/media/uploads/genesys-logo.png"
+        },
+        {
+          "logo": "/media/uploads/green-bkgd-stacked-logo.webp"
+        },
+        {
+          "logo": "/media/uploads/international-sanitary-supply-association-issa-logo-png_seeklogo-400548.png"
+        },
+        {
+          "logo": "/media/uploads/jeld-wen-logo-1024x292-1.jpg"
+        },
+        {
+          "logo": "/media/uploads/koh.png"
+        },
+        {
+          "logo": "/media/uploads/mdqag.png"
+        },
+        {
+          "logo": "/media/uploads/norditube.png"
+        },
+        {
+          "logo": "/media/uploads/ozharvest.jpeg"
+        },
+        {
+          "logo": "/media/uploads/prestige-glass.png"
+        },
+        {
+          "logo": "/media/uploads/ray-white.png"
+        },
+        {
+          "logo": "/media/uploads/saudi-aramco-logo.jpg"
+        },
+        {
+          "logo": "/media/uploads/shine-lawyers-logo.png"
+        },
+        {
+          "logo": "/media/uploads/solarcoaster-logo.png"
+        },
+        {
+          "logo": "/media/uploads/tafe.webp"
+        },
+        {
+          "logo": "/media/uploads/transform-water.png"
+        },
+        {
+          "logo": "/media/uploads/vincevarqa.png"
+        },
+        {
+          "logo": "/media/uploads/women_in_industrial_win_logo.jpeg"
+        },
+        {
+          "logo": "/media/uploads/panthers.png"
+        },
+        {
+          "logo": "/media/uploads/seven-network-logo.png"
+        },
+        {
+          "logo": "/media/uploads/nsw.png"
+        },
+        {
+          "logo": "/media/uploads/moddex.png"
         }
       ]
     },
@@ -50,6 +119,31 @@
           "videoSrc": "/media/uploads/cvd-glass.mp4",
           "category": "Brand Reel",
           "brand": "CVD Glass"
+        },
+        {
+          "category": "Collaboration",
+          "videoSrc": "/media/uploads/geneysis-x-hyatt-hotel.mp4",
+          "brand": "Geneysis x Hyatt"
+        },
+        {
+          "category": "Events",
+          "videoSrc": "/media/uploads/geneysis-expo.mp4",
+          "brand": "Geneysis Expo"
+        },
+        {
+          "category": "Promo Reel",
+          "videoSrc": "/media/uploads/abc-mechanical-and-radiators.mp4",
+          "brand": "ABC Mechanical and Radiators"
+        },
+        {
+          "category": "Small Business",
+          "brand": "VinceVarqa",
+          "videoSrc": "/media/uploads/vincevarqa.mp4"
+        },
+        {
+          "videoSrc": "/media/uploads/geneysis-expo-workshops.mp4",
+          "category": "Workshop",
+          "brand": "Geneysis Workshops"
         }
       ]
     },
