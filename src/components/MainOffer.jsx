@@ -6,17 +6,14 @@ export default function MainOffer({ data }) {
   const {
     mainTitle,
     offerTitle,
-    benefits = [],
+    text = "",
     gallery = [],
   } = data;
-
-  const normalizedBenefits = benefits
-    .map((b) => (typeof b === "string" ? b : b?.bullet || ""))
-    .filter(Boolean);
 
   return (
     <section className="section main-offer-section">
       <div className="section-inner main-offer-inner">
+
         {mainTitle && (
           <h2 className="section-title main-offer-heading">
             {mainTitle}
@@ -24,16 +21,15 @@ export default function MainOffer({ data }) {
         )}
 
         <div className="main-offer-content">
+
           {offerTitle && (
             <h3 className="main-offer-title">{offerTitle}</h3>
           )}
 
-          {normalizedBenefits.length > 0 && (
-            <ul className="main-offer-list">
-              {normalizedBenefits.map((item, idx) => (
-                <li key={idx}>{item}</li>
-              ))}
-            </ul>
+          {text && (
+            <p className="main-offer-text">
+              {text}
+            </p>
           )}
 
           {gallery.length > 0 && (
@@ -56,7 +52,11 @@ export default function MainOffer({ data }) {
 
                 return (
                   <div className="main-offer-item" key={idx}>
-                    <img src={item.src} alt={item.alt || ""} loading="lazy" />
+                    <img
+                      src={item.src}
+                      alt={item.alt || ""}
+                      loading="lazy"
+                    />
                   </div>
                 );
               })}
