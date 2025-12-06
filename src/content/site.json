@@ -18,8 +18,23 @@
       "title": "Brands we've worked with",
       "brands": [
         {
-          "logo": "/media/uploads/brand1.svg",
+          "logo": "/media/uploads/adapt.png",
           "name": "Brand One"
+        },
+        {
+          "logo": "/media/uploads/complete-glass.png"
+        },
+        {
+          "logo": "/media/uploads/cvd.webp"
+        },
+        {
+          "logo": "/media/uploads/dogfriendlyco.png"
+        },
+        {
+          "logo": "/media/uploads/elgi.png"
+        },
+        {
+          "logo": "/media/uploads/genesys-logo.png"
         }
       ]
     },
@@ -32,7 +47,7 @@
       "layout": "vertical",
       "videos": [
         {
-          "videoSrc": "/media/uploads/example1.mp4",
+          "videoSrc": "/media/uploads/cvd-glass.mp4",
           "category": "Brand Reel",
           "brand": "CVD Glass"
         }
